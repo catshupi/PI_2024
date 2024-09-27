@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envio de Receita Médica</title>
+    <style>
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        :root {
+            --bg-color-light: #f4f4f9;
+            --text-color-light: #333;
+            --bg-color-dark: #2b374d;
+            --text-color-dark: #f3f5f7;
+            --bg-color: var(--bg-color-light);
+            --text-color: var(--text-color-light);
+        }
+
+        body.dark-theme {
+            --bg-color: var(--bg-color-dark);
+            --text-color: var(--text-color-dark);
+        }
+
+        .container {
+            background-color: var(--bg-color);
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        input[type="text"],
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #505261;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #d0e7e0;
+            color: #333;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #39a182;
+            color: #fff;
+            border: none;
+            border-radius: 16px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #39a182;
+        }
+
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            background-color: #57a78c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background-color: #3a816f;
+        }
+
+        /* Estilo para inputs e textarea no tema escuro */
+        body.dark-theme input[type="text"],
+        body.dark-theme input[type="file"],
+        body.dark-theme textarea {
+            background-color: #3a3a3a; /* Cor de fundo dos inputs no tema escuro */
+            border: 1px solid #505261; /* Cor da borda dos inputs */
+            color: #f3f5f7; /* Cor do texto dos inputs */
+        }
+
+        body.dark-theme input[type="text"]:focus,
+        body.dark-theme input[type="file"]:focus,
+        body.dark-theme textarea:focus {
+            border-color: #57a78c; /* Cor da borda ao focar no input */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Envie sua receita!</h1>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <label for="nome-medico">Nome do Médico:</label>
+            <input type="text" id="nome-medico" name="nome-medico" placeholder="Digite o nome do médico" required>
+    
+            <label for="nome-paciente">Nome do Paciente:</label>
+            <input type="text" id="nome-paciente" name="nome-paciente" placeholder="Digite o nome do paciente" required>
+    
+            <label for="descricao">Descrição da Receita:</label>
+            <textarea id="descricao" name="descricao" rows="5" placeholder="Detalhes da receita médica" required></textarea>
+    
+            <label for="arquivo">Anexar Receita (PDF ou imagem):</label>
+            <input type="file" id="arquivo" name="arquivo" accept=".pdf, .jpg, .jpeg, .png" required>
+    
+            <button type="submit">Enviar Receita</button>
+        </form>
+    </div>
+
+    <button class="theme-toggle" id="theme-toggle">☀️</button>
+
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const bodyElement = document.body;
+
+        themeToggleBtn.addEventListener('click', () => {
+            bodyElement.classList.toggle('dark-theme');
+
+            if (bodyElement.classList.contains('dark-theme')) {
+                themeToggleBtn.textContent = '🌙';
+            } else {
+                themeToggleBtn.textContent = '☀️';
+            }
+        });
+    </script>
+</body>
+
+</html>
