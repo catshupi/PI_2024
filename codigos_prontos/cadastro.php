@@ -72,7 +72,7 @@ if (isset($_POST['nome'])) {
 
         <form class="form" method="post">
             <div class="flex-column">
-                <label>Nome </label>
+                <label>Nome</label>
             </div>
             <div class="inputForm">
                 <i class="bi bi-person-lines-fill"></i>
@@ -80,7 +80,7 @@ if (isset($_POST['nome'])) {
                 <input type="text" class="input" placeholder="Digite seu Nome" name="nome" />
             </div>
             <div class="flex-column">
-                <label>Telefone </label>
+                <label>Telefone</label>
             </div>
             <div class="inputForm">
                 <i class="bi bi-person-lines-fill"></i>
@@ -88,7 +88,7 @@ if (isset($_POST['nome'])) {
             </div>
 
             <div class="flex-column">
-                <label>Endereço </label>
+                <label>Endereço</label>
             </div>
             <div class="inputForm">
                 <i class="bi bi-person-lines-fill"></i>
@@ -112,7 +112,7 @@ if (isset($_POST['nome'])) {
             </div>
 
             <div class="flex-column">
-                <label>Email </label>
+                <label>Email</label>
             </div>
             <div class="inputForm">
                 <i class="bi bi-at"></i>
