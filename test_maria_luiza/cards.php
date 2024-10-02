@@ -108,11 +108,11 @@
                 <p class="titulo">Em caso de:</p>
                 <p>Dor pélvica
                     <br>
-                    Secreção vaginal
+                    Secreção vaginal.
                     <br>
-                    Caroços nos seios
+                    Caroços nos seios.
                     <br>
-                    Sangramento anormal
+                    Sangramento anormal.
                     <br>
                     Alterações no ciclo menstrual</p>
             </div>
